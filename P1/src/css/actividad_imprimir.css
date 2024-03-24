@@ -1,0 +1,100 @@
+/* General CSS */
+*, html {
+  background: white;
+  color: black;
+}
+
+a {
+  pointer-events: none;
+  cursor: default;
+}
+
+img {
+  filter: grayscale(100%);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header .header-container h1 {
+  font-size: 1.8em;
+}
+
+header .menu {
+  display: none;
+}
+
+aside {
+  display: none;
+}
+
+footer {
+  width: 100%;
+  background: white;
+  color: black;
+}
+
+footer .element:nth-child(2) {
+  display: none;
+}
+
+/* Activities CSS*/
+
+main {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+main > * ~ * {
+  margin-top: 1.6em;
+}
+
+main .title {
+  font-size: 1.8em;
+  text-align: center;
+}
+
+main .title span {
+  font-weight: bold;
+}
+
+main div.image {
+  display: none;
+}
+
+main .material-links {
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main .material-links > *:last-child {
+  display: none;
+}
+
+main .material-links fieldset {
+  padding: 7px 12px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+main .material-links legend {
+  margin: 0 auto;
+  padding: 2px 8px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+}
+
+main .material-links ul {
+  list-style-type: square;
+  margin: 10px 27px;
+}
+
+main .share {
+  display: none;
+}

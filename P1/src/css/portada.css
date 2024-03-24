@@ -1,0 +1,65 @@
+main {
+  background-color: rgba(255, 255, 255, 0.5);
+  grid-column: 2 / -1;
+  grid-row: 2 / -2;
+  padding: 1.5em 2em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+main .actividad {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 20px;
+  height: fit-content;
+  flex: 1 1 280px;
+  transition: 
+    background-color 300ms ease-in-out,
+    box-shadow 300ms ease-in-out,
+    transform 500ms ease-in-out;
+}
+
+main .actividad:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: skyblue;
+  color: #3178f2;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2); 
+  transform: translate(-2px, 2px);
+}
+
+main .actividad a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+main .actividad a:hover {
+  text-decoration: none;
+}
+
+main .actividad img {
+  max-width: 100%;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  main {
+    grid-column: 1 / -1;
+    grid-row: 2 / -3;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  main {
+    justify-content: center;
+    row-gap: 3em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  
+  main .actividad {
+    flex: 0 0 80%;
+  }
+}
