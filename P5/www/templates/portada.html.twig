@@ -1,0 +1,16 @@
+{% extends "plantilla_general.html.twig" %}
+
+  {% block specific_css %}/css/portada.css{% endblock %}
+
+  {% block main %}
+    <main>
+      {% for activityCard in activitiesCards %}
+        <div class="actividad">
+          <a href="actividad/{{ activityCard["id"] }}">
+            <img src="{{ activityCard["logo"] }}" alt="{{ activityCard["logo_alt"] }}"/>
+            <span>{{ activityCard["name"] }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </main>
+  {% endblock %}

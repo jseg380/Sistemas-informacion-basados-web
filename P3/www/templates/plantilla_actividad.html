@@ -1,0 +1,119 @@
+<!-- 
+Credits for the images and icons
+- Canva AI
+- Adobe Firefly
+- https://www.svgrepo.com/
+- Official sources (x, youtube, facebook)
+
+Créditos por las imágenes e iconos
+- Canva AI
+- Adobe Firefly
+- https://www.svgrepo.com/
+- Fuentes oficiales (x, youtube, facebook)
+-->
+{% extends "plantilla_general.html" %}
+  
+  {% block head %}
+    <!-- CSS libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/actividad.js" defer></script>
+
+    {{ parent() }}
+  {% endblock %}
+
+  {% block main}
+  <main class="p-5 sm:p-11 xl:p-[3em_3.5em]">
+    <div class="title">
+      <h2>{{ activityTitle }}</h2>
+      <span>{{ activityTime }}</span>
+      <span>{{ activityPrice }}</span>
+    </div>
+    <div class="par-1 leading-[normal]">
+      <p>{{ activity-par1 }}</p>
+      <div class="image">
+        <img src="{{ image1-src }}" alt="{{ image1-alt }}">
+        <span>{{ image1-subtitle }}</span>
+      </div>
+    </div>
+    <div class="par-2 leading-[normal]">
+      <p>{{ activity-par2 }}</p>
+      <div class="image">
+        <img src="{{ image2-src }}" alt="{{ image2-alt }}">
+        <span>{{ image2-subtitle }}</span>
+      </div>
+    </div>
+    <div class="material-links">
+      <fieldset>
+        <legend>Materiales necesarios</legend>
+        <ul>
+          {{ materials-needed }}
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>Enlaces relacionados</legend>
+        <ul>
+          {{ related-links }}
+        </ul>
+      </fieldset>
+    </div>
+    <div class="share">
+      <a href="https://x.com" class="icon"><img src="img/icons/x-social-media.svg" alt="X social media icon"></a>
+      <a href="https://www.facebook.com" class="icon"><img src="img/icons/facebook.png" alt="Facebook icon"></a>
+      <a href="https://www.youtube.com" class="icon"><img src="img/icons/youtube.png" alt="Youtube icon"></a>
+      <a href="actividad_imprimir.html" class="icon"><img src="img/icons/printer.svg" alt="Print icon"></a>
+    </div>
+    <div class="comments-section">
+      <button type="button" id="toggle-comments" class="mx-auto flex items-center gap-5 bg-sky-300/60 px-8 py-2 rounded-md hover:shadow-lg">
+        <span class="text-lg">Mostrar comentarios</span>
+        <img src="img/icons/comments.svg" alt="Icono de comentario" class="w-14"/>
+      </button>
+      <div id="comments-list" class="hidden sm:px-8 sm:py-5 rounded-xl mt-10 animate__animated animate__fadeOutUp">
+        <h3 class="text-xl font-semibold underline underline-offset-2">Sección de comentarios</h3>
+
+        <div id="comment-prototype" class="grid grid-cols-[min-content_1fr] gap-3 bg-white/70 px-6 py-6 mt-6 rounded-xl">
+          <img src="" alt="User avatar" class="avatar min-w-11 rounded-full">
+          <div class="post-info flex flex-col ml-2">
+            <span class="nickname font-semibold"></span>
+            <span class="date text-xs" title=""></span>
+          </div>
+          <p class="text col-span-full"></p>
+        </div>
+
+        <form class="bg-[#00590c]/30 p-3 sm:px-12 sm:py-9 mt-12 rounded-xl grid grid-cols-1 md:grid-cols-2 grid-rows-[min-content_min-content_1fr_min-content] gap-x-12 gap-y-3">
+          <h4 class="text-lg font-semibold col-start-1 md:col-span-2 row-start-1 row-end-2">Publicar comentario</h4>
+          <div class="col-start-1 col-span-1 row-start-2 row-span-1">
+            <label for="username" class="block mb-1">Nombre</label>
+            <input type="text" name="username" placeholder="Nombre" required class="rounded-md w-full p-2">
+          </div>
+          <div class="col-start-1 md:col-start-2 col-span-1 row-start-3 md:row-start-2 row-span-1">
+            <label for="email" class="block mb-1">E-mail</label>
+            <input type="email" name="email" placeholder="Correo electrónico" required class="rounded-md w-full p-2">
+            <!-- 
+              Regarding the last line of the 6th point (basic e-mail validation):
+              With type "email" a basic validation is made by the browser.
+              Here is the regex made by the browser: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+              You can find more information about this topic in the link below:
+              https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email#basic_validation
+            -->
+          </div>
+          <div class="col-start-1 cols-span-1 md:col-span-2 row-start-4 md:row-start-3 row-span-1 mt-3">
+            <label for="comment" class="block mb-1">Comentario</label>
+            <textarea name="comment" placeholder="Escribe aquí tu comentario" required class="rounded-md w-full p-2 min-h-10"></textarea>
+          </div>
+          <button type="submit" class="col-start-1 md:col-start-2 col-span-1 justify-self-end px-6 py-3 rounded-lg bg-[#155902]/80">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  {% endblock %}
+
+  {% block dialog %}
+  <dialog class="hidden flex flex-col-reverse xl:flex-row gap-5 px-16 py-14 min-w-96 shadow-[0_0_0_max(100vh,100vw)_rgba(0,0,0,0.4)] fixed left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]">
+    <img src="img/error-form.gif" alt="Hombre borra el icono de 'Este equipo' en su ordenador y de repente el ordenador delante suya desaparace" class="w-60 rounded-sm row-start-2 row-span-1 col-start-1 col-span-1">
+    <div class="flex flex-col gap-3 w-60">
+      <button type="button" id="close" class="size-6 rounded-full bg-red-500 text-white font-bold outline-rose-900 self-end">X</button>
+      <p class="xl:ml-8 self-center"></p>
+    </div>
+  </dialog>
+  {% endblock %}

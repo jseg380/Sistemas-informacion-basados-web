@@ -1,0 +1,24 @@
+{% extends "plantilla_general.html.twig" %}
+
+  {% block page_title %}- Management{% endblock %}
+
+  {% block specific_css %}/css/management.css{% endblock %}
+
+  {% block aside %}{% endblock %}
+
+  {% block main %}
+    <main>
+      <h2>Rol: {{ role }}</h2>
+      <div class="actions-list">
+      {% if moderator %}
+      <a href="/all-comments">Todos los comentarios</a>
+      {% endif %}
+      {% if gestor %}
+      <a href="/">Todas las actividades</a>
+      {% endif %}
+      {% if super %}
+      <a href="/edit-roles">Modificar roles de usuarios</a>
+      {% endif %}
+      </div>
+    </main>
+  {% endblock %}

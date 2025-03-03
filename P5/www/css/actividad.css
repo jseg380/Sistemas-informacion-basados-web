@@ -1,0 +1,262 @@
+body {
+  margin: 0 auto !important; /* To override TailWindCSS default body margin */
+}
+
+main {
+  padding: 3em 3.5em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+}
+
+main > * ~ * {
+  margin-top: 4em;
+}
+
+main .title h2 {
+  font-size: 1.8em;
+}
+
+main .title span {
+  font-weight: bold;
+}
+
+main .title span:last-child {
+  margin-left: 30px;
+}
+
+main [class^='par-'] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.8em 2.5em;
+  font-size: 1.9ch;
+}
+
+main [class^='par-'] ~ [class^='par-'] {
+  margin-top: 2em;
+}
+
+main [class^='par-'] p {
+  flex-basis: 620px;
+  flex-grow: 1;
+}
+
+main .par-1 {
+  margin-top: 10px;
+}
+
+main .par-2 {
+  flex-direction: row-reverse;
+}
+
+main div.image {
+  max-width: 150px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+main div.image img {
+  max-width: inherit;
+  border-radius: 15px;
+}
+
+main .material-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 4em;
+}
+
+main .material-links fieldset {
+  flex: 1 0 320px;
+  border-radius: 5px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+}
+
+main .material-links legend {
+  margin: 0 auto;
+  padding: 2px 8px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  border-radius: 2px;
+  transition:
+    background-color 300ms ease-in-out,
+    color 300ms ease-in-out;
+}
+
+main .material-links fieldset:hover legend {
+  background-color: rgb(0, 0, 0, 0.8);
+  color: white;
+}
+
+main .material-links ul {
+  list-style-type: square;
+  margin: 10px 27px;
+}
+
+main .material-links ul li ~ li {
+  margin-top: 5px;
+}
+
+main .share {
+  width: 70%;
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+}
+
+main .share .icon {
+  --size: 45px;
+  width: var(--size);
+  height: var(--size);
+}
+
+main .share .icon * {
+  width: inherit;
+}
+
+main .share .icon img {
+  display: block;
+}
+
+#comment-prototype {
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  main .share {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+@media only screen and (max-width: 520px) {
+  main .title {
+    text-align: center;
+  }
+
+  main .title span:nth-child(2) {
+    margin-left: 10px;
+  }
+
+  main div.image {
+    max-width: 220px; 
+  }
+}
+
+
+@media only print {
+  /* General CSS */
+  *, html {
+    background: white;
+    color: black;
+  }
+
+  a {
+    pointer-events: none;
+    cursor: default;
+  }
+
+  img {
+    filter: grayscale(100%);
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  header .header-container h1 {
+    font-size: 1.8em;
+  }
+
+  header .menu {
+    display: none;
+  }
+
+  aside {
+    display: none;
+  }
+
+  footer {
+    width: 100%;
+    background: white;
+    color: black;
+  }
+
+  footer .element:nth-child(2) {
+    display: none;
+  }
+
+  /* Activities CSS*/
+
+  main {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  main > * ~ * {
+    margin-top: 1.6em;
+  }
+
+  main .title {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  main .title span {
+    font-weight: bold;
+  }
+
+  main div.image {
+    display: none;
+  }
+
+  main .material-links {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  main .material-links > *:last-child {
+    display: none;
+  }
+
+  main .material-links fieldset {
+    padding: 7px 12px;
+    border-radius: 5px;
+    border: 2px solid black;
+  }
+
+  main .material-links legend {
+    margin: 0 auto;
+    padding: 2px 8px;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 2px;
+  }
+
+  main .material-links ul {
+    list-style-type: square;
+    margin: 10px 27px;
+  }
+
+  main .share {
+    display: none;
+  }
+
+  main .comments-section {
+    display: none;
+  }
+}

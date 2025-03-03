@@ -1,0 +1,94 @@
+<!-- 
+Credits for the images and icons
+- Canva AI
+- Adobe Firefly
+- https://www.svgrepo.com/
+- Official sources (x, youtube, facebook)
+
+Créditos por las imágenes e iconos
+- Canva AI
+- Adobe Firefly
+- https://www.svgrepo.com/
+- Fuentes oficiales (x, youtube, facebook)
+-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    {% block head %}
+    <title>Mountain activities {% block page_title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/general.css" rel="stylesheet">
+    <link href={% block specific_css %}{% endblock %} rel="stylesheet">
+    <link href="img/icons/logo.png" rel="icon">
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+      <a href="index.php" class="logo"><img src="img/icons/logo.png" alt="Mountain activities logo" /></a>
+      <div class="header-container">
+        <h1 class="font-bold leading-[normal]">Mountain activities</h1>
+        <nav class="menu">
+          <a href="index.php" id="menu-galeria" class="leading-[normal]">Galería</a>
+          <a href="index.php" id="menu-calendario" class="leading-[normal]">Calendario</a>
+          <a href="index.php" id="menu-noticias" class="leading-[normal]">Noticias</a>
+        </nav>
+      </div>
+    </header>
+
+    <aside>
+      <h2 class="text-[1.5em] font-bold leading-[normal]">Últimas noticias</h2>
+      <ul>
+        <li class="noticia leading-[normal]">
+          <h4 class="font-bold"><a href="index.php">Nueva ruta para hacer senderismo</a></h4>
+          <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint...</p>
+        </li>
+
+        <li class="noticia leading-[normal]">
+          <h4 class="font-bold"><a href="index.php">Advertencia por climatología adversa</a></h4>
+          <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint...</p>
+        </li>
+
+        <li class="noticia leading-[normal]">
+          <h4 class="font-bold"><a href="index.php">¡Celebramos nuestro 10º aniversario con descuentos increíbles!</a></h4>
+          <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+        </li>
+
+        <li class="leading-[normal]"><a href="index.php">Más noticias</a></li>
+      </ul>
+    </aside>
+
+    {% block main %}
+    {% endblock %}
+
+    <footer>
+      <div class="relevant-info">
+        <div class="element">
+          <span>E-mail</span>
+          <a href="mailto:foo-bar@fake.com?subject=Mountain activities">foo-bar@fake.com</a>
+        </div>
+
+        <div class="element">
+          <span>GitHub</span>
+          <a href="https://github.com/jseg380">Jseg380</a>
+        </div>
+
+        <div class="element">
+          <span>Teléfono</span>
+          <a href="tel:+34958958958">+34 958 958 958</a>
+        </div>
+
+        <div class="element">
+          <span>Dirección</span>
+          <a href="https://www.google.com/maps/@7.0894994,125.6285236,3a,19.7y,352.51h,95.29t/data=!3m7!1e1!3m5!1sgpszCb25RiZz_uNt1cqFTQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fpanoid%3DgpszCb25RiZz_uNt1cqFTQ%26cb_client%3Dmaps_sv.tactile.gps%26w%3D203%26h%3D100%26yaw%3D44.606846%26pitch%3D0%26thumbfov%3D100!7i16384!8i8192?entry=ttu">C/ No existe</a>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2024 - Juan Manuel Segura
+      </div>
+    </footer>
+
+    {% block dialog %}
+    {% endblock %}
+  </body>
+</html>

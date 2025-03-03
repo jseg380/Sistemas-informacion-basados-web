@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Allow direct access to existing files that do not end in .php or .html
+  RewriteCond %{REQUEST_FILENAME} -f
+  RewriteCond %{REQUEST_FILENAME} !\.php$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !\.html$ [NC]
+  RewriteRule ^ - [L]
+
+  # Redirect all other requests to index.php
+  RewriteRule ^(.*)$ index.php?path=$1 [L,QSA]
+</IfModule>

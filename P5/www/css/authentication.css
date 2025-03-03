@@ -1,0 +1,65 @@
+header .auth-menu {
+  visibility: hidden;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.5);
+  grid-column: 1 / -1;
+  grid-row: 2 / -2;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main form {
+  width: 300px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+main form .form-group {
+  margin-bottom: 20px;
+}
+
+main form .form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+main form .form-group input[type="text"],
+main form .form-group input[type="email"],
+main form .form-group input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+main form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+main form button:hover {
+  background-color: #0056b3;
+}
+
+main form .redirect-register,
+main form .redirect-login {
+  margin-top: 10px;
+}
+
+main form ul {
+  margin-top: 20px;
+  color: red;
+}
